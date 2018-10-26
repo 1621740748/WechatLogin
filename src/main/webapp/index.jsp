@@ -11,6 +11,6 @@
  <head>
  </head>
 <body>
-<a href='http://localhost:8080/WechatLogin/wechat/callBack.do'>click</a>
+<a href='http://www.jrj.com.cn/WechatLogin/wechat/acquireOpenID.do'>click</a>
 </body>
 </html>

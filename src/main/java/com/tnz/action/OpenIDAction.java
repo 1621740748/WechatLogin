@@ -53,9 +53,10 @@ public class OpenIDAction extends HttpServlet {
 	private String generateReqUrl() throws UnsupportedEncodingException {
 		return "https://open.weixin.qq.com/connect/oauth2/authorize?"
 				+ "appid="
-				+ "wxba18404f8cfe70cd"
+				+ "wx22c16ac0c0f743c6"
 				+ "&redirect_uri="
-				+ URLEncoder.encode("http://www.jerrik168.cn/WechatLogin/wechat/callBack.do","UTF-8")
-				+ "&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+				//+ URLEncoder.encode("http://"+Constants.host+"/WechatLogin/wechat/callBack.do","UTF-8")
+				+"http://"+Constants.host+"/WechatLogin/wechat/callBack.do"
+				+ "&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect";
 	}
 }

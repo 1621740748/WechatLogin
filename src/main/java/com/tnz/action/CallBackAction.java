@@ -47,7 +47,7 @@ public class CallBackAction extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		LOGGER.info("CallBackAction begin at {}", new Date().getTime());
-		String openid = request.getParameter("openid");
+		//String openid = request.getParameter("openid");
 		String code = request.getParameter("code");
 		LOGGER.info("获到的 code is : {} ", code);
 		String redirectUrl = acquireOpenIDUrlWithCode(code);
@@ -64,15 +64,15 @@ public class CallBackAction extends HttpServlet {
 	}
 
 	public static void main(String[] args) {
-		String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxba18404f8cfe70cd&redirect_uri="
-				+ "http%3A%2F%2Fwww.jerrik168.cn%2FWechatLogin%2Fwechat%2FcallBack.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+		String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx22c16ac0c0f743c6&redirect_uri="
+				+ "http%3A%2F%2F"+Constants.host+"%2FWechatLogin%2Fwechat%2FcallBack.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
 		System.out.println(HttpClientUtil.doGet(url));
 	}
 
 	private String acquireOpenIDUrlWithCode(String code) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxba18404f8cfe70cd&"
-				+ "secret=028fc71aeb278ca18a9993aec7a9aa69&code="
+		sb.append("https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx22c16ac0c0f743c6&"
+				+ "secret=6bde6a1d1a4eb52fe32f983826e154f6&code="
 				+ code
 				+ "&grant_type=authorization_code");
 		return sb.toString();
