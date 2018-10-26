@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="com.tnz.action.Constants"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,6 @@
  <head>
  </head>
 <body>
-<a href='http://www.jrj.com.cn/WechatLogin/wechat/acquireOpenID.do'>click</a>
+<a href='http://<%=Constants.host%>/WechatLogin/wechat/acquireOpenID.do'>click</a>
 </body>
 </html>
